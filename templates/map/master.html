@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content = "ie=edge">
+
+    {% include "shared/header.html" %}
+
+    <title>CulMap</title>
+</head>
+<body>
+
+<div id="colorlib-page">
+		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
+		<aside id="colorlib-aside" role="complementary" class="js-fullheight">
+
+            {% include "shared/navigation.html" %}
+
+			<div class="colorlib-footer">
+                {% include "shared/footer.html" %}
+			</div>
+
+		</aside> <!-- END COLORLIB-ASIDE -->
+
+	</div><!-- END COLORLIB-PAGE -->
+
+<div class="map" id="map"></div>
+
+
+ {% include "shared/js.html" %}
+<script src="https://maps.google.com/maps/api/js?key=AIzaSyA_o0mcO6j1a86JKyvtibLhwaccAICp2i8&callback=initMap" async defer></script>
+</body>
+</html>
