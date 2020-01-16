@@ -1,12 +1,19 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    {% include "shared/header.html" %}
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content = "ie=edge">
 
-	<div id="colorlib-page">
+    {% include "shared/header.html" %}
+
+    <title>CulMap</title>
+</head>
+<body>
+
+<div id="colorlib-page">
 		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
 		<aside id="colorlib-aside" role="complementary" class="js-fullheight">
 
@@ -14,17 +21,19 @@
 
 			<div class="colorlib-footer">
                 {% include "shared/footer.html" %}
-
 			</div>
-		</aside> <!-- END COLORLIB-ASIDE -->
 
-        {% include "home/home.html" %}
+		</aside> <!-- END COLORLIB-ASIDE -->
 
 	</div><!-- END COLORLIB-PAGE -->
 
-  <!-- loader -->
 
-  {% include "shared/js.html" %}
+<div class="map" id="map"></div>
 
-  </body>
+{% block content %}
+ {% endblock %}
+
+ {% include "shared/js.html" %}
+
+</body>
 </html>

@@ -8201,10 +8201,10 @@ h1, h2, h3, h4, h5,
   -ms-transition: all 0.5s ease;
   transition: all 0.5s ease;
   border-right: 1px solid #e6e6e6; }
-  @media (min-width: 992px) {
+  @media (min-width: 10000px) {
     #colorlib-aside {
       width: 25%; } }
-  @media (max-width: 991.98px) {
+  @media (max-width: 10000px) {
     #colorlib-aside {
       width: 320px;
       -moz-transform: translateX(-320px);
@@ -8467,7 +8467,7 @@ h1, h2, h3, h4, h5,
   -webkit-transition: all 0.5s ease;
   -ms-transition: all 0.5s ease;
   transition: all 0.5s ease; }
-  @media (max-width: 991.98px) {
+  @media (max-width: 10000px) {
     .colorlib-nav-toggle {
       opacity: 1;
       visibility: visible; } }
@@ -8841,11 +8841,6 @@ textarea.form-control {
       .ftco-social li a:hover {
         color: #fff; }
 
-#map {
-  width: 100%; }
-  @media (max-width: 991.98px) {
-    #map {
-      height: 300px; } }
 
 @-webkit-keyframes pulse {
   0% {
@@ -9294,3 +9289,11 @@ textarea.form-control {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
+
+.map {
+    left: 0;
+    top:0;
+    height:100%;
+    width:100%;
+    position: absolute;
+}
