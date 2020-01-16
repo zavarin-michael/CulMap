@@ -9,7 +9,6 @@ function initMap() {
         zoom: 10,
     };
 
-
     var map = new google.maps.Map(document.getElementById("map"), opt);
 
     var marker = [];
@@ -32,5 +31,6 @@ function initMap() {
             info[i].open(map, marker[i]);
         })
      }
+
 
 }

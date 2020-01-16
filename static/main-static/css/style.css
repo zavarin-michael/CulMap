@@ -8841,11 +8841,6 @@ textarea.form-control {
       .ftco-social li a:hover {
         color: #fff; }
 
-#map {
-  width: 100%; }
-  @media (max-width: 991.98px) {
-    #map {
-      height: 300px; } }
 
 @-webkit-keyframes pulse {
   0% {
