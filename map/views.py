@@ -1,6 +1,7 @@
 from django.shortcuts import render
+from map.models import MapMarks
 
-# Create your views here.
 
-def map (request):
-    return render(request, 'map/map.html')
+def map(request):
+    marks = MapMarks.objects.all()
+    return render(request, 'map/map.html', {"marks": marks})
