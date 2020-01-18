@@ -2,64 +2,83 @@
 {% load static %}
 {% block content %}
 
+
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ccd08e6c-baa4-4ccd-bb52-405b31957b32&lang=ru_RU" type="text/javascript"></script>
+
     <script>
+
+    ymaps.ready(initMap);
+
     function initMap() {
 
-        var pos = {lat: 56.832040, lng: 60.598218};
+        var pos = [56.832040, 60.598218];
 
         var opt = {
             center: pos,
             zoom: 10,
+            controls: []
         };
 
 
-        var map = new google.maps.Map(document.getElementById("map"), opt);
+        var map = new ymaps.Map("map", opt, );
 
         marker = [];
         info = [];
-        var i = 0;
+        let i = 0;
         var mas = [];
-        Name = [];
-        posx= [];
-        posy = [];
-        comment = [];
 
+         marker[i] = new ymaps.GeoObject({
+                geometry: {
+                type: "Point", // тип геометрии - точка
+                coordinates: pos // координаты точки
+                }
+            });
 
+         map.geoObjects.add(marker[i]);
 
         {% for mark in marks %}
 
-            Name[i] = "{{ mark.name }}";
-            posx[i] = {{ mark.position_x }};
-            posy[i] = {{ mark.position_y }};
-            comment[i] = "{{ mark.comment }}";
+            mas[i] = {
+                "posx": {{ mark.position_x }},
+                "posy": {{ mark.position_y }},
+                "comment": "{{ mark.comment }}",
+                "name": "{{ mark.name }}",
+            };
+
             i++;
         {% endfor %}
 
-
         for(let j = 0; j < i; j++) {
 
-
-
-            marker[j] = new google.maps.Marker({
-                position: {lat: posx[j], lng: posy[j]},
-                map: map,
-                label: Name[j],
+            marker[j] = new ymaps.GeoObject({
+                geometry: {
+                type: "Point",
+                coordinates: [mas[j]["posx"], mas[j]["posy"]]
+                }
             });
 
-            info[j] = new google.maps.InfoWindow({
-                content: '<h3>' + comment[j] + '</h3>',
+            marker[j].events.add('click', function (event) {
+
+                event.preventDefault();
+                var $this = $(this);
+
+                if ($('body').hasClass('offcanvas')) {
+                    $('a').removeClass('active');
+                    $('body').removeClass('offcanvas');
+                } else {
+                    $('a').addClass('active');
+                    $('body').addClass('offcanvas');
+                }
+
             });
 
 
-            marker[j].addListener("click", function () {
-                info[j].open(map, marker[j]);
-            });
-
+            map.geoObjects.add(marker[j]);
         }
     }
 
     </script>
 
-<script src="https://maps.google.com/maps/api/js?key=AIzaSyD9Cl7pCDzEsH_LKfw4SVFPyV8vUbIaUSc&callback=initMap" async defer></script>
+
 
 {% endblock content %}

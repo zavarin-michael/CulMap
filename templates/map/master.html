@@ -2,38 +2,38 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content = "ie=edge">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content = "ie=edge">
 
-    {% include "shared/header.html" %}
+        {% include "shared/header.html" %}
 
-    <title>CulMap</title>
-</head>
-<body>
+        <title>CulMap</title>
+    </head>
+    <body>
 
-<div id="colorlib-page">
-		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
-		<aside id="colorlib-aside" role="complementary" class="js-fullheight">
+        <div id="colorlib-page">
+                <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
+                <aside id="colorlib-aside" role="complementary" class="js-fullheight">
 
-            {% include "shared/navigation.html" %}
+                    {% include "shared/navigation.html" %}
 
-			<div class="colorlib-footer">
-                {% include "shared/footer.html" %}
-			</div>
+                    <div class="colorlib-footer">
+                        {% include "shared/footer.html" %}
+                    </div>
 
-		</aside> <!-- END COLORLIB-ASIDE -->
+                </aside> <!-- END COLORLIB-ASIDE -->
 
-	</div><!-- END COLORLIB-PAGE -->
+        </div><!-- END COLORLIB-PAGE -->
 
 
-<div class="map" id="map"></div>
+        <div class="map" id="map"></div>
 
-{% block content %}
- {% endblock %}
+        {% block content %}
+         {% endblock %}
 
- {% include "shared/js.html" %}
+         {% include "shared/js.html" %}
 
-</body>
+    </body>
 </html>
