@@ -14,26 +14,24 @@
     <body>
 
         <div id="colorlib-page">
-                <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
-                <aside id="colorlib-aside" role="complementary" class="js-fullheight">
+            <div class = "pointer">></div>
+            <a href="#" class="menu-hide js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
+            <aside id="colorlib-aside" role="complementary" class="js-fullheight">
 
-                    {% include "shared/navigation.html" %}
+                {% include "shared/navigation.html" %}
 
-                    <div class="colorlib-footer">
-                        {% include "shared/footer.html" %}
-                    </div>
+                <div class="colorlib-footer">
+                    {% include "shared/footer.html" %}
+                </div>
 
-                </aside> <!-- END COLORLIB-ASIDE -->
-
+            </aside> <!-- END COLORLIB-ASIDE -->
         </div><!-- END COLORLIB-PAGE -->
-
 
         <div class="map" id="map"></div>
 
         {% block content %}
-         {% endblock %}
+        {% endblock %}
 
-         {% include "shared/js.html" %}
-
+        {% include "shared/js.html" %}
     </body>
 </html>

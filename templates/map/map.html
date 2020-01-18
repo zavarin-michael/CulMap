@@ -62,13 +62,22 @@
                 event.preventDefault();
                 var $this = $(this);
 
-                if ($('body').hasClass('offcanvas')) {
-                    $('a').removeClass('active');
-                    $('body').removeClass('offcanvas');
-                } else {
-                    $('a').addClass('active');
-                    $('body').addClass('offcanvas');
+                if ($('a').hasClass('menu-hide')) {
+                    $('a').removeClass('menu-hide');
+                    $('a').addClass('menu-appear');
                 }
+                else {
+                    if ($('body').hasClass('offcanvas')) {
+                        $('a').removeClass('active');
+                        $('body').removeClass('offcanvas');
+                    }
+                    else {
+                        $('a').addClass('active');
+                        $('body').addClass('offcanvas');
+                    }
+                }
+
+
 
             });
 

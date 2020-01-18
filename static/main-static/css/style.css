@@ -8132,6 +8132,25 @@ a.text-dark:hover, a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6; } }
 
+
+.menu-hide {
+      top: 0;
+      -moz-transform: translateX(-67px);
+      -webkit-transform: translateX(-67px);
+      -ms-transform: translateX(-67px);
+      -o-transform: translateX(-67px);
+      transform: translateX(-67px);
+}
+
+.menu-appear {
+      top: 0;
+      -moz-transform: translateX(0);
+      -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+      -o-transform: translateX(0);
+      transform: translateX(0);
+}
+
 body {
   font-family: "Poppins", Arial, sans-serif;
   background: #fff;
@@ -9296,4 +9315,15 @@ textarea.form-control {
     height:100%;
     width:100%;
     position: absolute;
+}
+
+.pointer {
+  position: fixed;
+  z-index: 9999;
+  margin-left: 10px;
+  text-align: center;
+  font-size: 40px;
+  color: black;
+  width: 40px;
+  height: 40px;
 }
