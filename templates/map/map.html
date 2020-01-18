@@ -16,10 +16,11 @@
         var opt = {
             center: pos,
             zoom: 10,
+            controls: []
         };
 
 
-        var map = new ymaps.Map("map", opt);
+        var map = new ymaps.Map("map", opt, );
 
         marker = [];
         info = [];
@@ -39,7 +40,9 @@
 
             mas[i] = {
                 "posx": {{ mark.position_x }},
-                "posy": {{ mark.position_y }}
+                "posy": {{ mark.position_y }},
+                "comment": "{{ mark.comment }}",
+                "name": "{{ mark.name }}",
             };
 
             i++;
@@ -49,10 +52,26 @@
 
             marker[j] = new ymaps.GeoObject({
                 geometry: {
-                type: "Point", // тип геометрии - точка
-                coordinates: [mas[j]["posx"], mas[j]["posy"]] // координаты точки
+                type: "Point",
+                coordinates: [mas[j]["posx"], mas[j]["posy"]]
                 }
             });
+
+            marker[j].events.add('click', function (event) {
+
+                event.preventDefault();
+                var $this = $(this);
+
+                if ($('body').hasClass('offcanvas')) {
+                    $('a').removeClass('active');
+                    $('body').removeClass('offcanvas');
+                } else {
+                    $('a').addClass('active');
+                    $('body').addClass('offcanvas');
+                }
+
+            });
+
 
             map.geoObjects.add(marker[j]);
         }
