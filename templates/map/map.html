@@ -62,21 +62,10 @@
                 event.preventDefault();
                 var $this = $(this);
 
-                if ($('a').hasClass('menu-hide')) {
-                    $('a').removeClass('menu-hide');
-                    $('a').addClass('menu-appear');
+                if (!$('#section-info').hasClass('info-section-open')) {
+                    $('body').toggleClass('offcanvas-info');
+                    $('#section-info').toggleClass('info-section-open');
                 }
-                else {
-                    if ($('body').hasClass('offcanvas')) {
-                        $('a').removeClass('active');
-                        $('body').removeClass('offcanvas');
-                    }
-                    else {
-                        $('a').addClass('active');
-                        $('body').addClass('offcanvas');
-                    }
-                }
-
 
 
             });

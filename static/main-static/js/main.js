@@ -58,6 +58,17 @@
 	};
 	burgerMenu();
 
+	$('#section-info').on('click', function(event) {
+
+		if ($('#section-info').hasClass('info-section-open')) {
+			$('body').toggleClass('offcanvas-info');
+			$('#section-info').toggleClass('info-section-open');
+		} else {
+			$('body').toggleClass('offcanvas-info');
+			$('#section-info').toggleClass('info-section-open');
+		}
+
+	});
 	// Click outside of offcanvass
 	var mobileMenuOutsideClick = function() {
 
