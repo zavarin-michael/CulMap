@@ -24,21 +24,13 @@
 
         marker = [];
         info = [];
-        let i = 0;
+        let i = 1;
         var mas = [];
-
-         marker[i] = new ymaps.GeoObject({
-                geometry: {
-                type: "Point", // тип геометрии - точка
-                coordinates: pos // координаты точки
-                }
-            });
-
-         map.geoObjects.add(marker[i]);
 
         {% for mark in marks %}
 
             mas[i] = {
+                "id": {{ mark.id }},
                 "posx": {{ mark.position_x }},
                 "posy": {{ mark.position_y }},
                 "comment": "{{ mark.comment }}",
@@ -48,7 +40,7 @@
             i++;
         {% endfor %}
 
-        for(let j = 0; j < i; j++) {
+        for(let j = 1; j < i; j++) {
 
             marker[j] = new ymaps.GeoObject({
                 geometry: {
@@ -67,11 +59,18 @@
                     $('#section-info').toggleClass('info-section-open');
                 }
 
-
+                location.href = "http://127.0.0.1:8050/?"+mas[j]["id"];
             });
 
-
             map.geoObjects.add(marker[j]);
+        }
+
+        var id = {{ id }};
+
+        if (id > -1){
+            var name = document.getElementById("name");
+            var text = document.createTextNode(mas[id]["name"]);
+            name.appendChild(text);
         }
     }
 

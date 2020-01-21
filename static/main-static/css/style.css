@@ -8151,7 +8151,7 @@ body {
       transform: translateX(0);
       width: 320px;
       background: #fff;
-      z-index: 999;
+      z-index: 1005;
       position: fixed; }
     body.offcanvas #colorlib-main, body.offcanvas .colorlib-nav-toggle {
       top: 0;
@@ -8167,7 +8167,6 @@ body {
       -ms-transform: translateX(0);
       -o-transform: translateX(0);
       transform: translateX(0);
-      width: 420px;
       background: #fff;
       z-index: 999;
       position: fixed;
@@ -8218,14 +8217,17 @@ h1, h2, h3, h4, h5,
 
 @media (max-width: 10000px) {
     #colorlib-section-info{
-      width: 320px;
-      -moz-transform: translateX(-320px);
-      -webkit-transform: translateX(-320px);
-      -ms-transform: translateX(-320px);
-      -o-transform: translateX(-320px);
-      transform: translateX(-320px);
+      width: 420px;
+      -moz-transform: translateX(-420px);
+      -webkit-transform: translateX(-420px);
+      -ms-transform: translateX(-420px);
+      -o-transform: translateX(-420px);
+      transform: translateX(-420px);
       padding-top: 2em;
-      background: rgba(0, 0, 0, 0.04); } }
+      background: rgba(0, 0, 0, 0.04); }
+
+
+}
 
 #colorlib-aside {
   padding-top: 5em;
@@ -9346,18 +9348,32 @@ textarea.form-control {
 
 .pointer {
   position: fixed;
-  z-index: 9999;
+  z-index: 1000;
   margin-left: 10px;
   text-align: center;
   font-size: 40px;
   color: black;
   transform: rotateZ(0deg);
   transition: all 0.5s ease;
+  cursor: pointer;
 }
 
 .info-section-open {
   transform: translateX(370px) rotateZ(-180deg);
   transition: all 0.5s ease;
+}
+
+@media (max-width: 420px) {
+    .info-section-open {
+      transform: translateX(85vw) rotateZ(-180deg);
+      transition: all 0.5s ease;
+    }
+}
+
+
+@media (max-width: 420px) {
+    #colorlib-section-info {
+      width: 100%; }
 }
 
 .line{

@@ -15,9 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.urls import re_path
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('home/', include('home.urls')),
+    path('admin', admin.site.urls),
+    path('home', include('home.urls')),
     path('', include('map.urls')),
+    re_path(r'^(?P<id>[0-9])', include('map.urls')),
+
 ]
