@@ -21,6 +21,6 @@ urlpatterns = [
     path('admin', admin.site.urls),
     path('home', include('home.urls')),
     path('', include('map.urls')),
-    re_path(r'^(?P<id>[0-9])', include('map.urls')),
+    re_path(r'', include('map.urls')),
 
 ]

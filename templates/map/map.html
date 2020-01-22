@@ -4,7 +4,7 @@
 
 
     <script src="https://api-maps.yandex.ru/2.1/?apikey=ccd08e6c-baa4-4ccd-bb52-405b31957b32&lang=ru_RU" type="text/javascript"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script>
 
     ymaps.ready(initMap);
@@ -33,8 +33,6 @@
                 "id": {{ mark.id }},
                 "posx": {{ mark.position_x }},
                 "posy": {{ mark.position_y }},
-                "comment": "{{ mark.comment }}",
-                "name": "{{ mark.name }}",
             };
 
             i++;
@@ -59,18 +57,21 @@
                     $('#section-info').toggleClass('info-section-open');
                 }
 
-                location.href = "http://127.0.0.1:8050/?"+mas[j]["id"];
+                $.ajax({
+                    type:"GET",
+                    url: "/",
+                    data:{
+                             id: j
+                    },
+                    success: function(json)
+                    {
+                        $('#name').text(json.name);
+                    }
+                });
+
             });
 
             map.geoObjects.add(marker[j]);
-        }
-
-        var id = {{ id }};
-
-        if (id > -1){
-            var name = document.getElementById("name");
-            var text = document.createTextNode(mas[id]["name"]);
-            name.appendChild(text);
         }
     }
 
