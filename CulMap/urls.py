@@ -19,7 +19,7 @@ from django.urls import path, include
 from CulMap import settings
 
 urlpatterns = [
-    path(r'^admin', admin.site.urls),
-    path(r'^home', include('home.urls')),
+    path(r'admin', admin.site.urls),
+    path(r'home', include('home.urls')),
     path(r'', include('map.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
