@@ -8170,6 +8170,7 @@ body {
       background: #fff;
       z-index: 999;
       position: fixed;
+      opacity: 1;
   }
 
 a {
@@ -8195,10 +8196,6 @@ h1, h2, h3, h4, h5,
   position: relative; }
 
 #colorlib-section-info {
-  padding-top: 5em;
-  padding-bottom: 40px;
-  padding-left: 2em;
-  padding-right: 2em;
   position: fixed;
   bottom: 0;
   top: 0;
@@ -8223,10 +8220,8 @@ h1, h2, h3, h4, h5,
       -ms-transform: translateX(-420px);
       -o-transform: translateX(-420px);
       transform: translateX(-420px);
-      padding-top: 2em;
-      background: rgba(0, 0, 0, 0.04); }
-
-
+      opacity: 0;
+    }
 }
 
 #colorlib-aside {
@@ -8476,12 +8471,6 @@ h1, h2, h3, h4, h5,
 .colorlib-nav-toggle i::after {
   bottom: -7px; }
 
-.colorlib-nav-toggle:hover i::before {
-  top: -10px; }
-
-.colorlib-nav-toggle:hover i::after {
-  bottom: -10px; }
-
 .colorlib-nav-toggle.active i {
   background: transparent; }
 
@@ -8503,13 +8492,13 @@ h1, h2, h3, h4, h5,
 
 .colorlib-nav-toggle {
   position: fixed;
-  left: -12px;
   top: 0px;
   z-index: 9999;
   cursor: pointer;
   opacity: 1;
   visibility: hidden;
-  padding: 20px;
+  padding-top: 3px;
+  padding-left: 5px;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   -webkit-transition: all 0.5s ease;
@@ -9349,18 +9338,22 @@ textarea.form-control {
 .pointer {
   position: fixed;
   z-index: 1000;
-  margin-left: 10px;
   text-align: center;
-  font-size: 40px;
   color: black;
   transform: rotateZ(0deg);
-  transition: all 0.5s ease;
+  transition: all 0.5s ease, background 3s;
   cursor: pointer;
+  width: 50px;
+  height: 50px;
 }
 
 .info-section-open {
   transform: translateX(370px) rotateZ(-180deg);
   transition: all 0.5s ease;
+}
+
+.image-pointer{
+  margin-top: 18px;
 }
 
 @media (max-width: 420px) {
@@ -9385,4 +9378,30 @@ textarea.form-control {
   z-index: 998;
   margin-top: 35px;
   left: 0;
+}
+
+.around-pointer{
+  -moz-border-radius-bottomright: 10%;
+  -moz-border-radius-topright: 10%;
+}
+
+.image{
+  width: 100%;
+}
+
+.border-style-right{
+  background: white;
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  left: 88%;
+  border-bottom-left-radius: 80%;
+}
+
+.border-style-left{
+  background: white;
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  border-bottom-right-radius: 80%;
 }

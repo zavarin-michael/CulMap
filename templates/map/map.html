@@ -65,7 +65,9 @@
                     },
                     success: function(json)
                     {
+                        alert(json.image);
                         $('#name').text(json.name);
+                        $('#image').attr("src", "media/"+json.image);
                     }
                 });
 
