@@ -61,13 +61,15 @@
                     type:"GET",
                     url: "/",
                     data:{
-                             id: j
+                             id: mas[j]["id"]
                     },
                     success: function(json)
                     {
                         alert(json.image);
                         $('#name').text(json.name);
-                        $('#image').attr("src", "media/"+json.image);
+                        $('#comment').text(json.comment);
+                        var pic = document.getElementById("image");
+                        pic.style.backgroundImage = "url('media/"+json.image+"')";
                     }
                 });
 

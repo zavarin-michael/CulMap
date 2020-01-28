@@ -70,11 +70,13 @@ hr {
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
-  margin-bottom: 0.5rem; }
+  margin-bottom: 0; }
 
 p {
   margin-top: 0;
-  margin-bottom: 1rem; }
+  margin-bottom: 0.5rem;
+  font-size: 1.1em;
+}
 
 abbr[title],
 abbr[data-original-title] {
@@ -302,12 +304,11 @@ template {
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  margin-bottom: 0.5rem;
   font-weight: 500;
-  line-height: 1.2; }
+}
 
 h1, .h1 {
-  font-size: 2.5rem; }
+  font-size: 1.8rem; }
 
 h2, .h2 {
   font-size: 2rem; }
@@ -8185,10 +8186,11 @@ a {
 
 h1, h2, h3, h4, h5,
 .h1, .h2, .h3, .h4, .h5 {
-  line-height: 1.5;
-  color: rgba(0, 0, 0, 0.8);
+  color: rgba(0, 0, 0);
   font-weight: normal;
-  font-family: "Lora", Arial, serif; }
+  font-family: "Lora", Arial, serif;
+  line-height: 1.2;
+}
 
 #colorlib-page {
   width: 100%;
@@ -9358,6 +9360,13 @@ textarea.form-control {
 
 @media (max-width: 420px) {
     .info-section-open {
+      transform: translateX(88vw) rotateZ(-180deg);
+      transition: all 0.5s ease;
+    }
+}
+
+@media (max-width: 320px) {
+    .info-section-open {
       transform: translateX(85vw) rotateZ(-180deg);
       transition: all 0.5s ease;
     }
@@ -9387,6 +9396,11 @@ textarea.form-control {
 
 .image{
   width: 100%;
+  height: 250px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: none;
 }
 
 .border-style-right{
@@ -9396,6 +9410,13 @@ textarea.form-control {
   position: fixed;
   left: 88%;
   border-bottom-left-radius: 80%;
+  z-index: 1;
+}
+
+@media (max-width: 320px) {
+  .border-style-right {
+    left: 85%;
+  }
 }
 
 .border-style-left{
@@ -9404,4 +9425,11 @@ textarea.form-control {
   height: 50px;
   position: fixed;
   border-bottom-right-radius: 80%;
+  z-index: 1;
 }
+
+.boxes{
+  padding: 15px 20px 15px;
+  border-bottom: 1px solid #e4e4e4;
+}
+
