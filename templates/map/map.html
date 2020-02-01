@@ -4,7 +4,7 @@
 
 
     <script src="https://api-maps.yandex.ru/2.1/?apikey=ccd08e6c-baa4-4ccd-bb52-405b31957b32&lang=ru_RU" type="text/javascript"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script>
 
     ymaps.ready(initMap);
@@ -24,31 +24,21 @@
 
         marker = [];
         info = [];
-        let i = 0;
+        let i = 1;
         var mas = [];
-
-         marker[i] = new ymaps.GeoObject({
-                geometry: {
-                type: "Point", // тип геометрии - точка
-                coordinates: pos // координаты точки
-                }
-            });
-
-         map.geoObjects.add(marker[i]);
 
         {% for mark in marks %}
 
             mas[i] = {
+                "id": {{ mark.id }},
                 "posx": {{ mark.position_x }},
                 "posy": {{ mark.position_y }},
-                "comment": "{{ mark.comment }}",
-                "name": "{{ mark.name }}",
             };
 
             i++;
         {% endfor %}
 
-        for(let j = 0; j < i; j++) {
+        for(let j = 1; j < i; j++) {
 
             marker[j] = new ymaps.GeoObject({
                 geometry: {
@@ -62,16 +52,28 @@
                 event.preventDefault();
                 var $this = $(this);
 
-                if ($('body').hasClass('offcanvas')) {
-                    $('a').removeClass('active');
-                    $('body').removeClass('offcanvas');
-                } else {
-                    $('a').addClass('active');
-                    $('body').addClass('offcanvas');
+                if (!$('#section-info').hasClass('info-section-open')) {
+                    $('body').toggleClass('offcanvas-info');
+                    $('#section-info').toggleClass('info-section-open');
                 }
 
-            });
+                $.ajax({
+                    type:"GET",
+                    url: "/",
+                    data:{
+                             id: mas[j]["id"]
+                    },
+                    success: function(json)
+                    {
+                        alert(json.image);
+                        $('#name').text(json.name);
+                        $('#comment').text(json.comment);
+                        var pic = document.getElementById("image");
+                        pic.style.backgroundImage = "url('media/"+json.image+"')";
+                    }
+                });
 
+            });
 
             map.geoObjects.add(marker[j]);
         }
