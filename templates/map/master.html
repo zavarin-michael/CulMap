@@ -2,38 +2,50 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content = "ie=edge">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content = "ie=edge">
 
-    {% include "shared/header.html" %}
+        {% include "shared/header.html" %}
 
-    <title>CulMap</title>
-</head>
-<body>
+        <title>CulMap</title>
+    </head>
+    <body class="offcanvas-info">
 
-<div id="colorlib-page">
-		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
-		<aside id="colorlib-aside" role="complementary" class="js-fullheight">
-
-            {% include "shared/navigation.html" %}
-
-			<div class="colorlib-footer">
-                {% include "shared/footer.html" %}
-			</div>
-
-		</aside> <!-- END COLORLIB-ASIDE -->
-
-	</div><!-- END COLORLIB-PAGE -->
+        <div id="colorlib-page">
+            <div class="pointer info-section-open" id = "section-info">
+                <img src="{% static "pictures/pointer.svg" %}" class="image-pointer">
+            </div>
+            <aside id="colorlib-section-info" role="complementary" class="js-fullheight">
+                <div class = "border-style-right"></div>
+                <div class = "border-style-left"></div>
+                <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle" id = "section-menu"><i></i></a>
+                <aside id="colorlib-aside" role="complementary" class="js-fullheight">
 
 
-<div class="map" id="map"></div>
 
-{% block content %}
- {% endblock %}
+                    {% include "shared/navigation.html" %}
 
- {% include "shared/js.html" %}
+                    <div class="colorlib-footer">
+                        {% include "shared/footer.html" %}
+                    </div>
 
-</body>
+                </aside> <!-- END COLORLIB-ASIDE -->
+                <div id="image" class="image"> </div>
+                <div class="boxes">
+                    <h1 id = "name"></h1>
+                    <p id = "comment"></p>
+                </div>
+            </aside>
+
+        </div><!-- END COLORLIB-PAGE -->
+
+        <div class="map" id="map"></div>
+
+        {% block content %}
+        {% endblock %}
+
+        {% include "shared/js.html" %}
+    </body>
 </html>
