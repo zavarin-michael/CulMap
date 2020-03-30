@@ -11,14 +11,12 @@
 
         <title>CulMap</title>
     </head>
-    <body class="offcanvas-info">
+    <body class="offcanvas-info" style ="background:#66ff66" >
 
         <div id="colorlib-page">
-                <div class = "border-style-right"></div>
                 <div class = "border-style-left"></div>
                 <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle" id = "section-menu"><i></i></a>
                 <aside id="colorlib-aside" role="complementary" class="js-fullheight">
-
 
 
                     {% include "shared/navigation.html" %}
@@ -28,12 +26,30 @@
                     </div>
 
                 </aside> <!-- END COLORLIB-ASIDE -->
-                <div id="image" class="image"> </div>
-                    <h1 id = "name"></h1>
-                    <p id = "comment"></p>
+            
+                <div style="
+                    word-spacing: 4px;
+                    font-family: cursive;
+                    color: blue;
+                    font-weight: bold;
+                    position: absolute;
+                    width: 460px;
+                    margin-left: 57px;
+                    "><div>
+                            <h><ya-tr-span data-index="10-0" data-value="Здравствуйте, это информация о сайте
+                            " data-translation="Здравствуйте, это информация о сайте
+                            " data-type="trSpan" data-selected="false">Здравствуйте, это информация о сайте
+                            </ya-tr-span></h>
+                    <div><ya-tr-span data-index="11-0" data-value="Мы создали этот сайт ради индивидуального проекта" data-translation="Мы создали этот сайт ради индивидуального проекта" data-type="trSpan" data-selected="false">Мы создали этот сайт ради индивидуального проекта</ya-tr-span></div></div>
+                </div>
 
                 <div>
                     <img src={% static "pictures/about.jpg" %}
+                <img src="/static/pictures/about.jpg" style="
+                float: right;
+                height: 652px;
+                width: 450px;
+                ">
                 </div>
                 </div>
             </aside>
