@@ -9434,6 +9434,23 @@ textarea.form-control {
 }
 
 .about-text{
-  margin-left: 135px;
-  
+  margin-left: 135px
+}
+
+.image-back-contact{
+  background: url('/static/pictures/about.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+}
+
+.rectangle {
+    display: table;
+    width: 600px;
+    height: 580px;
+    background: white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
 }
