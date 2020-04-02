@@ -9572,6 +9572,10 @@ textarea.form-control {
   line-height: 30px;
 }
 
-.run-string{
+.run-string-hello{
   color: yellow;
+}
+
+.run-string-help{
+  color: #9C02A7;
 }
