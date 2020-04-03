@@ -1,0 +1,59 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content = "ie=edge">
+
+        {% include "shared/header.html" %}
+
+        <title>CulMap</title>
+    </head>
+    <body class="offcanvas-info image-back-contact" >
+
+        <div id="colorlib-page">
+                <div class = "border-style-left"></div>
+                <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle" id = "section-menu"><i></i></a>
+                <aside id="colorlib-aside" role="complementary" class="js-fullheight">
+
+
+                    {% include "shared/navigation.html" %}
+
+                    <div class="colorlib-footer">
+                        {% include "shared/footer.html" %}
+                    </div>
+
+                </aside> <!-- END COLORLIB-ASIDE -->
+
+                <div class="rectangle-zavarin">
+                    <img src='/static/pictures/zavarin.jpg' align="right" class="image-zavarin">
+                        <div class="text-zavarin-head"><h4>Заварин Михаил Алексеевич</h4></div><div class="text-zavarin"><br /> <div class="about-me-zavarin">Коротко обо мне : Ученик 10 А класса Лицея№180 ,,Полифорум"</div></div>
+
+                </div>
+
+                <div class="rectangle-tarasov">
+                    <div class="text-tarasov-head">
+                        <img src='/static/pictures/tarasov.jpg' align="right" class="image-tarasov">
+                        <h4>Тарасов Лев Владиславович</h4></div><div class="text-tarasov"> <br /> <div class="about-me-tarasov">Коротко обо мне : Ученик 10 А класса Лицея№180 ,,Полифорум" , начинающий веб-программист</div> </div>
+
+                </div>
+
+                <div class="rectangle-anohin">
+                    <div class="text-anohin-head">
+                        <img src='/static/pictures/anohin.jpg' class="image-anohin" align="right">
+                            <h4>Анохин Максим Владимирович</h4></div><div class="text-anohin"><br /> <div class="about-me-anohin">Коротко обо мне : Ученик 10 А класса Лицея№180 ,,Полифорум" </div></div>
+                    
+                </div>
+
+            </aside>
+
+        </div><!-- END COLORLIB-PAGE -->
+
+        {% block content %}
+        {% endblock %}
+
+        {% include "shared/js.html" %}
+    </body>
+</html>

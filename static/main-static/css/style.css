@@ -9433,3 +9433,149 @@ textarea.form-control {
   border-bottom: 1px solid #e4e4e4;
 }
 
+.about-text{
+  margin-left: 135px
+}
+
+.image-back-about{
+  background: url('/static/pictures/about.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+}
+
+.rectangle {
+    display: table;
+    width: 600px;
+    height: 230px;
+    background: black;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    background: linear-gradient( #A92A55 , transparent);
+}
+
+.text-rectangle {
+  color: white;
+  text-align: center;
+}
+
+.text-rectangle-thx {
+  color: red;
+  text-align: center;
+}
+
+.rectangle-zavarin {
+    display: table;
+    width: 800px;
+    height: 230px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    background: #98ED00;
+}
+
+.rectangle-tarasov {
+    display: table;
+    width: 800px;
+    height: 230px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    background: #00BD39;
+}
+
+.rectangle-anohin {
+    display: table;
+    width: 800px;
+    height: 230px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    background: #A61700;
+}
+
+.text-zavarin-head {
+  text-align: center;
+}
+
+.text-tarasov-head {
+  text-align: center;
+}
+
+.text-anohin-head {
+  text-align: center;
+
+}
+
+.image-zavarin{
+  background: url('/static/pictures/zavarin.jpg');
+  background-size: cover;
+  height: 230px;
+}
+
+.image-tarasov{
+  background: url('/static/pictures/tarasov.jpg');
+  background-size: cover;
+  height: 230px;
+  width: 230px;
+}
+
+.image-anohin{
+  background: url('/static/pictures/anohin.jpg');
+  background-size: cover;
+  height: 230px;
+  width: 230px;
+}
+
+.image-back-contact {
+  background: url('/static/pictures/back-contact.jpg');
+  background-size: cover;
+
+}
+
+.text-zavarin {
+  color: blue;
+  text-align: center;
+  line-height: 55px;
+}
+
+.text-tarasov {
+  color: #870047;
+  text-align: center;
+  line-height: 55px;
+}
+
+.text-anohin {
+  color: white;
+  text-align: center;
+  line-height: 55px;
+
+}
+
+.about-me-zavarin {
+  color: blue;
+  text-align: center;
+  line-height: 30px;
+}
+
+.about-me-tarasov {
+  color: #870047;
+  text-align: center;
+  line-height: 30px;
+}
+
+.about-me-anohin {
+  color: white;
+  text-align: center;
+  line-height: 30px;
+}
+
+.run-string-hello{
+  color: yellow;
+}
+
+.run-string-help{
+  color: #9C02A7;
+}
