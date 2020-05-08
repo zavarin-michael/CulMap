@@ -12,7 +12,17 @@
         <title>CulMap</title>
     </head>
     <body class="offcanvas-info">
-
+    <div class="overlay" id="modal2">
+        <div class="modal" id="modal1">
+	            <div class="content">
+		            <h1 class="title">CUUUUUUUUUUUL</h1>
+		            <p>
+				        cool
+		            </p>
+		                <a class="btn close-modal" data-modal="#modal1" href="#">K Bye</a>
+                </div>
+        </div>
+    </div>
         <div id="colorlib-page">
             <div class="pointer info-section-open" id = "section-info">
                 <img src="{% static "pictures/pointer.svg" %}" class="image-pointer">
@@ -37,6 +47,14 @@
                     <h1 id = "name"></h1>
                     <p id = "comment"></p>
                 </div>
+
+
+                <div class="boxes">
+                    <input id="adding-post" data-modal="#modal1" type="submit" value="Добавить отзыв" class="btn btn-primary" style="float: right;">
+                    <h1>Отзыв</h1>
+                    <p>Комментарий отзыва</p>
+                </div>
+
             </aside>
 
         </div><!-- END COLORLIB-PAGE -->
