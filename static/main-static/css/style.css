@@ -9609,6 +9609,7 @@ textarea.form-control {
   transition: 0.35s ease-in-out;
   max-height: 100vh;
   overflow-y: auto;
+  z-index: 1000;
 }
 .modal-open1 {
     opacity: 1;
@@ -9620,7 +9621,7 @@ textarea.form-control {
   pointer-events: inherit;
 }
 
-.overlay .modal {
+.overlay .modal1 {
   background: white;
   text-align: center;
   padding: 40px 80px;
@@ -9632,22 +9633,22 @@ textarea.form-control {
   overflow-y: auto;
 }
 
-.overlay .modal.open {
+.overlay .modal1.open {
   opacity: 1;
   pointer-events: inherit;
 }
 
-.overlay .modal.open .content {
+.overlay .modal1.open .content {
   transform: translate(0, 0px);
   opacity: 1;
 }
 
-.overlay .modal .content {
+.overlay .modal1 .content {
   transform: translate(0, -10px);
   opacity: 0;
   transition: 0.35s ease-in-out;
 }
 
-.overlay .modal .title {
+.overlay .modal1 .title {
   margin-top: 0;
 }
