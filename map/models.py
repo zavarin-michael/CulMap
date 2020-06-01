@@ -8,3 +8,4 @@ class MapMarks(models.Model):
     position_y = models.FloatField(default="1")
     name = models.CharField(default="", max_length=64)
     comment = models.TextField(default="")
+    id_comment = models.TextField(default="")
