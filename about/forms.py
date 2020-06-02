@@ -2,5 +2,9 @@ from django import forms
 
 
 class CommentForm(forms.Form):
-    User_name = forms.TextInput()
-    Comment = forms.TextInput()
+    username = forms.CharField(label=u'Электронная почта', widget=forms.TextInput(attrs={
+        'size': 50
+    }))
+    comment = forms.CharField(label=u'Электронная почта', widget=forms.TextInput(attrs={
+        'size': 50
+    }))
