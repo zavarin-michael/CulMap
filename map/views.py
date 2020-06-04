@@ -12,7 +12,10 @@ def map(request):
         else:
             marks = MapMarks.objects.all().values('id', 'position_x', 'position_y')
             form = CommentForm()
-            return render(request, 'map/map.html', {"marks":marks})
+            return render(request, 'map/info-module.html', {"marks": marks, "form": form})
     else:
         form = CommentForm(request.POST)
         a = 1
+        marks = MapMarks.objects.all().values('id', 'position_x', 'position_y')
+        form = CommentForm()
+        return render(request, 'map/info-module.html', {"marks": marks, "form": form})
