@@ -1,6 +1,7 @@
 from django.shortcuts import render
 
 from about.forms import CommentForm
+from about.models import Comment
 from map.models import MapMarks
 from django.http import JsonResponse
 
@@ -14,8 +15,13 @@ def map(request):
             form = CommentForm()
             return render(request, 'map/info-module.html', {"marks": marks, "form": form})
     else:
-        form = CommentForm(request.POST)
-        a = 1
-        marks = MapMarks.objects.all().values('id', 'position_x', 'position_y')
+        data = CommentForm(request.POST)
+        comment = Comment()
+        comment.comment = data.data["comment"]
+        comment.username = data.data["username"]
+        comment.id_mark = data.data["id_mark"]
+        comment.save()
+
         form = CommentForm()
+        marks = MapMarks.objects.all().values('id', 'position_x', 'position_y')
         return render(request, 'map/info-module.html', {"marks": marks, "form": form})

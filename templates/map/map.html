@@ -54,6 +54,8 @@
                 event.preventDefault();
                 var $this = $(this);
 
+                document.getElementById('id_id_mark').value = mas[j]["id"];
+
                 if (!$('#section-info').hasClass('info-section-open')) {
                     $('body').toggleClass('offcanvas-info');
                     $('#section-info').toggleClass('info-section-open');
@@ -67,7 +69,6 @@
                     },
                     success: function(json)
                     {
-                        alert(json.image);
                         $('#name').text(json.name);
                         $('#comment').text(json.comment);
                         var pic = document.getElementById("image");
