@@ -69,6 +69,15 @@
                     },
                     success: function(json)
                     {
+                        alert(json.id_comment);
+
+                        for(let j = 0; j < json.id_comment.size; j++) {
+                            var tag = '<div>' + json.id_comment[j] + '</div>';
+                            var target = document.getElementById('target');
+                            target.innerHTML = tag;
+                        }
+
+
                         $('#name').text(json.name);
                         $('#comment').text(json.comment);
                         var pic = document.getElementById("image");
