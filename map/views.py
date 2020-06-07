@@ -8,7 +8,7 @@ from django.http import JsonResponse
 def map(request):
     if request.method == "GET":
         if request.is_ajax():
-            mark = MapMarks.objects.filter(id=request.GET["id"]).values()
+            mark = MapMarks.objects.filter(id = request.GET["id"]).values()
             return JsonResponse(mark.first())
         else:
             marks = MapMarks.objects.all().values('id', 'position_x', 'position_y')
@@ -20,6 +20,9 @@ def map(request):
         comment.comment = data.data["comment"]
         comment.username = data.data["username"]
         comment.id_mark = data.data["id_mark"]
+        mark = MapMarks.objects.filter(id = data.data["id_mark"]).values()
+        mark.id_commnet = mark.id_comment + str(data.data["id_mark"]) + str('_')
+        mark.save()
         comment.save()
 
         form = CommentForm()
