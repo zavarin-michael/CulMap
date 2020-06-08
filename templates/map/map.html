@@ -63,20 +63,33 @@
 
                 $.ajax({
                     type:"GET",
-                    url: "/",
+                    url: "",
                     data:{
-                             id: mas[j]["id"]
+                             id: mas[j]["id"],
+                             type: 1,
                     },
                     success: function(json)
                     {
-                        alert(json.id_comment);
+                        let s = json.id_comment;
 
-                        for(let j = 0; j < json.id_comment.size; j++) {
-                            var tag = '<div>' + json.id_comment[j] + '</div>';
-                            var target = document.getElementById('target');
-                            target.innerHTML = tag;
+                        spis = s.split('_');
+
+                        for(let j = 0; j < spis.length - 1; j++) {
+
+                            $.ajax({
+                                type: "GET",
+                                url: "",
+                                data: {
+                                    id: spis[j],
+                                    type: 2,
+                                },
+                                success: function (com) {
+                                    var tag = '<div class="boxes"><h1>' + com.username +  '</h1> <p>' + com.comment + '</p></div>';
+                                    var target = document.getElementById('target');
+                                    target.innerHTML += tag;
+                                }
+                        });
                         }
-
 
                         $('#name').text(json.name);
                         $('#comment').text(json.comment);

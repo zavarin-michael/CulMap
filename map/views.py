@@ -8,18 +8,12 @@ from django.http import JsonResponse
 def Map(request):
     if request.method == "GET":
         if request.is_ajax():
-            mark = MapMarks.objects.filter(id = request.GET["id"]).values()
-            s = str(mark.first()['id_comment'])
-
-            spis = s.split('_')
-
-            commentslist = []
-            for i in spis:
-                if (i != ''):
-                    a = Comment.objects.filter(id = int(i)).values().first()
-                    commentslist.append(a)
-
-            return JsonResponse(mark.first())
+            if request.GET["type"] == '1':
+                mark = MapMarks.objects.filter(id = request.GET["id"]).values()
+                return JsonResponse(mark.first())
+            else:
+                comment = Comment.objects.filter(id = request.GET["id"]).values()
+                return JsonResponse(comment.first())
         else:
             marks = MapMarks.objects.all().values('id', 'position_x', 'position_y')
             form = CommentForm()
