@@ -25,9 +25,9 @@ def Map(request):
         comment.username = data.data["username"]
         comment.id_mark = data.data["id_mark"]
         mark = MapMarks.objects.get(id = data.data["id_mark"])
-        mark.id_comment = mark.id_comment + str(data.data["id_mark"]) + '_'
-        mark.save()
         comment.save()
+        mark.id_comment = mark.id_comment + str(comment.id) + '_'
+        mark.save()
 
         form = CommentForm()
         marks = MapMarks.objects.all().values('id', 'position_x', 'position_y')

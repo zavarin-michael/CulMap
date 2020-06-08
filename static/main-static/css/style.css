@@ -9658,3 +9658,7 @@ textarea.form-control {
   width: 0;
   height: 0;
 }
+
+::-webkit-scrollbar {
+  width: 0px;
+}

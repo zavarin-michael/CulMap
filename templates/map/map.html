@@ -72,6 +72,9 @@
                     {
                         let s = json.id_comment;
 
+                        var target = document.getElementById('target');
+                        target.innerHTML = '';
+
                         spis = s.split('_');
 
                         for(let j = 0; j < spis.length - 1; j++) {
