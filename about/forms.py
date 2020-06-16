@@ -1,6 +1,5 @@
 from django import forms
 
-
 class CommentForm(forms.Form):
     username = forms.CharField(label=u'Username', widget=forms.TextInput(attrs={
         'size': 50
@@ -10,3 +9,4 @@ class CommentForm(forms.Form):
     }))
 
     id_mark = forms.IntegerField()
+    type = forms.IntegerField()

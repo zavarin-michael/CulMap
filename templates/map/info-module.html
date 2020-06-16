@@ -1,13 +1,14 @@
 {% extends "map/map.html" %}
 {% load static %}
-{% block comment %}
+{% block info-section-module %}
 <div class="overlay" id="modal2">
         <div class="modal1" id="modal1">
                 <div>
                 <img src="{% static "pictures/X-mark.svg" %}" style="float:right" id="Layer_1">
                 </div>
 
-                {% include "comment/comment.html" %}
+                {% block comment %}
+                {% endblock comment %}
 
         </div>
     </div>
@@ -51,4 +52,4 @@
             </aside>
 
         </div>
-{% endblock comment %}
+{% endblock info-section-module %}
