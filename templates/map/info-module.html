@@ -1,55 +1,49 @@
 {% extends "map/map.html" %}
 {% load static %}
 {% block info-section-module %}
-<div class="overlay" id="modal2">
-        <div class="modal1" id="modal1">
-                <div>
-                <img src="{% static "pictures/X-mark.svg" %}" style="float:right" id="Layer_1">
+
+    {% block comment %}
+    {% endblock comment %}
+
+
+    <div id="colorlib-page">
+        <div>
+           <img src="{% static "pictures/plus.svg" %}" style="float:right; padding-right: 10px; margin-top: 12px" id="adding_mark">
+        </div>
+        <div class="pointer info-section-open" id = "section-info">
+            <img src="{% static "pictures/pointer.svg" %}" class="image-pointer">
+        </div>
+        <aside id="colorlib-section-info" role="complementary" class="js-fullheight" style="overflow : auto">
+            <div class = "border-style-right"></div>
+            <div class = "border-style-left"></div>
+            <a class="js-colorlib-nav-toggle colorlib-nav-toggle" id = "section-menu"><i></i></a>
+            <aside id="colorlib-aside" role="complementary" class="js-fullheight">
+
+
+                {% include "shared/navigation.html" %}
+
+                <div class="colorlib-footer">
+                    {% include "shared/footer.html" %}
                 </div>
 
-                {% block comment %}
-                {% endblock comment %}
+            </aside> <!-- END COLORLIB-ASIDE -->
+            <div id="image" class="image"> </div>
+            <div class="boxes">
+                <h1 id = "name"></h1>
+                <p id = "comment"></p>
+            </div>
 
-        </div>
+
+
+            <div class="boxes" style="text-align: right">
+                <input id="adding-post" data-modal="#modal1" type="submit" value="Добавить отзыв" class="btn btn-primary">
+            </div>
+
+
+            <div id="target">
+
+            </div>
+        </aside>
+
     </div>
-        <div id="colorlib-page">
-            <div>
-               <img src="{% static "pictures/plus.svg" %}" style="float:right; padding-right: 10px; margin-top: 12px" id="adding_mark">
-            </div>
-            <div class="pointer info-section-open" id = "section-info">
-                <img src="{% static "pictures/pointer.svg" %}" class="image-pointer">
-            </div>
-            <aside id="colorlib-section-info" role="complementary" class="js-fullheight" style="overflow : auto">
-                <div class = "border-style-right"></div>
-                <div class = "border-style-left"></div>
-                <a class="js-colorlib-nav-toggle colorlib-nav-toggle" id = "section-menu"><i></i></a>
-                <aside id="colorlib-aside" role="complementary" class="js-fullheight">
-
-
-                    {% include "shared/navigation.html" %}
-
-                    <div class="colorlib-footer">
-                        {% include "shared/footer.html" %}
-                    </div>
-
-                </aside> <!-- END COLORLIB-ASIDE -->
-                <div id="image" class="image"> </div>
-                <div class="boxes">
-                    <h1 id = "name"></h1>
-                    <p id = "comment"></p>
-                </div>
-
-
-
-                <div class="boxes" style="text-align: right">
-                    <input id="adding-post" data-modal="#modal1" type="submit" value="Добавить отзыв" class="btn btn-primary">
-                </div>
-
-
-                <div id="target">
-
-                </div>
-            </aside>
-
-        </div>
 {% endblock info-section-module %}

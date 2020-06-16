@@ -5,6 +5,11 @@
     {% block adding-mark %}
     {% endblock adding-mark %}
 
+<div class="overlay" id="modal2">
+    <div class="modal1" id="modal1">
+
+    <img src="{% static "pictures/X-mark.svg" %}" style="float:right" id="Layer_1">
+
     <div class="content">
         <form method="post" class="p-3 p-md-5 bg-light">
             {% csrf_token %}
@@ -36,4 +41,6 @@
         </form>
         <a class="btn close-modal" data-modal="#modal1" href="#">Спасибо за комментарий</a>
     </div>
+   </div>
+</div>
 {% endblock comment %}
