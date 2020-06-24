@@ -31,6 +31,14 @@ def Map(request):
             comment.save()
             mark.id_comment = mark.id_comment + str(comment.id) + '_'
             mark.save()
+        else:
+            mark = MapMarks()
+            mark.comment = data.data["comment"]
+            mark.name = data.data["name"]
+            mark.image = data.data["image"]
+            mark.position_y = float(data.data["position_y"])
+            mark.position_x = float(data.data["position_x"])
+            mark.save()
         form = CommentForm()
         form_mark = MarkForm()
         marks = MapMarks.objects.all().values('id', 'position_x', 'position_y')

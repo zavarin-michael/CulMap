@@ -11,14 +11,44 @@
             {% csrf_token %}
             <fieldset>
 
-          {{ form_mark }}
+          <div class="form-group">
+            <label for="id_name">Название объекта</label>
+            <input type="text" class="form-control" name = "name" id="id_name">
+          </div>
 
           <div class="form-group">
-            <input id="submit" type="submit" value="Добавить комментарий" class="btn py-3 px-4 btn-primary">
+            <label for="id_comment">Комментарий</label>
+            <textarea name = "comment" id="id_comment" cols="30" rows="10" class="form-control"></textarea>
           </div>
+
+          <div class = "form-group">
+            <label for="id_image">Картинка</label>
+            <input type="file" name="image" accept="image/*" required="" id="id_image">
+          </div>
+
+          <div class = "form-group">
+            <label for="id_position_y">Координаты по y</label>
+            <input type="number" name = "id_position_y" id="id_position_y">
+          </div>
+
+          <div class = "form-group">
+            <label for="id_position_x">Координаты по x</label>
+            <input type="number" name = "id_position_x" id="id_position_x">
+          </div>
+
+          <div class = "id_mark">
+            <label for="id_type">Тип</label>
+            <input type="number" name = "type" id="id_type" value="0">
+          </div>
+
+          <div class="form-group">
+            <input id="submit" type="submit" value="Добавить объект" class="btn py-3 px-4 btn-primary">
+          </div>
+
             </fieldset>
         </form>
-        <a class="btn close-modal" data-modal="#modal1" href="#">Спасибо за новый контент</a>
+
+
     </div>
     </div>
 </div>
