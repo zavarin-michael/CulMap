@@ -7,7 +7,7 @@
     <img src="{% static "pictures/X-mark.svg" %}" style="float:right" id="Layer_2">
 
     <div class="content">
-        <form method="post" class="p-3 p-md-5 bg-light">
+        <form method="post" class="p-3 p-md-5 bg-light" enctype="multipart/form-data">
             {% csrf_token %}
             <fieldset>
 
@@ -28,12 +28,12 @@
 
           <div class = "form-group">
             <label for="id_position_y">Координаты по y</label>
-            <input type="number" name = "id_position_y" id="id_position_y">
+            <input type="number" name = "position_y" id="id_position_y">
           </div>
 
           <div class = "form-group">
             <label for="id_position_x">Координаты по x</label>
-            <input type="number" name = "id_position_x" id="id_position_x">
+            <input type="number" name = "position_x" id="id_position_x" >
           </div>
 
           <div class = "id_mark">

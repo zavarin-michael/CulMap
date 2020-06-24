@@ -21,7 +21,11 @@ def Map(request):
             form_mark = MarkForm()
             return render(request, 'adding-mark/adding-mark.html', {"marks": marks, "form_comment": form_comment, "form_mark": form_mark})
     else:
-        data = CommentForm(request.POST)
+        if (request.POST["type"] == 1):
+            data = CommentForm(request.POST)
+        else:
+            data = MarkForm(request.POST, request.FILES)
+
         if (data.data["type"] == '1'):
             comment = Comment()
             comment.comment = data.data["comment"]
@@ -35,7 +39,7 @@ def Map(request):
             mark = MapMarks()
             mark.comment = data.data["comment"]
             mark.name = data.data["name"]
-            mark.image = data.data["image"]
+            mark.image = data.files["image"]
             mark.position_y = float(data.data["position_y"])
             mark.position_x = float(data.data["position_x"])
             mark.save()
