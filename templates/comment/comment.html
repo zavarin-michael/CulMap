@@ -1,0 +1,46 @@
+{% extends "map/info-module.html" %}
+{% load static %}
+{% block comment %}
+
+    {% block adding-mark %}
+    {% endblock adding-mark %}
+
+<div class="overlay" id="modal2">
+    <div class="modal1" id="modal1">
+
+    <img src="{% static "pictures/X-mark.svg" %}" style="float:right" id="Layer_1">
+
+    <div class="content">
+        <form method="post" class="p-3 p-md-5 bg-light">
+            {% csrf_token %}
+            <fieldset>
+
+          <div class="form-group">
+            <label for="id_username">Имя</label>
+            <input type="text" class="form-control" name = "username" id="id_username">
+          </div>
+
+          <div class="form-group">
+            <label for="id_comment">Комментарий</label>
+            <textarea name = "comment" id="id_comment" cols="30" rows="10" class="form-control"></textarea>
+          </div>
+
+          <div class = "id_mark">
+            <label for="id_id_mark">ID</label>
+            <input type="number" name = "id_mark" id="id_id_mark">
+
+            <label for="id_id_mark">ID</label>
+            <input type="number" name = "type" id="id_type" value="1">
+          </div>
+
+
+          <div class="form-group">
+            <input id="submit" type="submit" value="Добавить комментарий" class="btn py-3 px-4 btn-primary">
+          </div>
+            </fieldset>
+        </form>
+        <a class="btn close-modal" data-modal="#modal1" href="#">Спасибо за комментарий</a>
+    </div>
+   </div>
+</div>
+{% endblock comment %}
