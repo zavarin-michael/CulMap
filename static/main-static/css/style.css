@@ -9433,3 +9433,232 @@ textarea.form-control {
   border-bottom: 1px solid #e4e4e4;
 }
 
+.about-text{
+  margin-left: 135px
+}
+
+.image-back-about{
+  background: url('/static/pictures/about.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+}
+
+.rectangle {
+    display: table;
+    width: 600px;
+    height: 230px;
+    background: black;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    background: linear-gradient( #A92A55 , transparent);
+}
+
+@media (max-width: 600px) {
+    .rectangle {
+      width: 100%;
+    }
+}
+
+.text-rectangle {
+  color: white;
+  text-align: center;
+}
+
+.text-rectangle-thx {
+  color: red;
+  text-align: center;
+}
+
+.rectangle-zavarin {
+    display: table;
+    width: 100%;
+    height: 230px;
+    margin-top: 50px;
+    background: #98ED00;
+}
+
+.rectangle-tarasov {
+    display: table;
+    width: 100%;
+    height: 230px;
+    margin-top: 50px;
+    background: #00BD39;
+}
+
+.rectangle-anohin {
+    display: table;
+    width: 100%;
+    height: 230px;
+    margin-top: 50px;
+    background: #A61700;
+}
+
+.text-zavarin-head {
+  text-align: center;
+}
+
+.text-tarasov-head {
+  text-align: center;
+}
+
+.text-anohin-head {
+  text-align: center;
+
+}
+
+.image-zavarin{
+  background: url('/static/pictures/zavarin.jpg');
+  background-size: cover;
+  height: 230px;
+}
+
+.image-tarasov{
+  background: url('/static/pictures/tarasov.jpg');
+  background-size: cover;
+  height: 230px;
+  width: 230px;
+}
+
+.image-anohin{
+  background: url('/static/pictures/anohin.jpg');
+  background-size: cover;
+  height: 230px;
+  width: 230px;
+}
+
+.image-back-contact {
+  background: url('/static/pictures/back-contact.jpg');
+  background-size: cover;
+
+}
+
+.text-zavarin {
+  color: blue;
+  text-align: center;
+  line-height: 55px;
+}
+
+.text-tarasov {
+  color: #870047;
+  text-align: center;
+  line-height: 55px;
+}
+
+.text-anohin {
+  color: white;
+  text-align: center;
+  line-height: 55px;
+
+}
+
+.about-me-zavarin {
+  color: blue;
+  text-align: center;
+  line-height: 30px;
+}
+
+.about-me-tarasov {
+  color: #870047;
+  text-align: center;
+  line-height: 30px;
+}
+
+.about-me-anohin {
+  color: white;
+  text-align: center;
+  line-height: 30px;
+}
+
+.run-string-hello{
+  color: yellow;
+}
+
+.run-string-help{
+  color: #9C02A7;
+}
+
+.group-rectangle{
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 800px) {
+    .group-rectangle {
+      width: 100%;
+    }
+}
+
+.overlay {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.75);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.35s ease-in-out;
+  max-height: 100vh;
+  overflow-y: auto;
+  z-index: 1000;
+}
+.modal-open1 {
+    opacity: 1;
+    pointer-events: inherit;
+}
+
+.overlay.open {
+  opacity: 1;
+  pointer-events: inherit;
+}
+
+.overlay .modal1 {
+  background: white;
+  text-align: center;
+  box-shadow: 0px 1px 10px rgba(255, 255, 255, 0.35);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.35s ease-in-out;
+  max-height: 100vh;
+  overflow-y: auto;
+}
+
+.overlay .modal1.open {
+  opacity: 1;
+  pointer-events: inherit;
+}
+
+.overlay .modal1.open .content {
+  transform: translate(0, 0px);
+  opacity: 1;
+}
+
+.overlay .modal1 .content {
+  margin: 80px;
+  transform: translate(0, -10px);
+  opacity: 0;
+  transition: 0.35s ease-in-out;
+}
+
+.overlay .modal1 .title {
+  margin-top: 0;
+}
+
+.id_mark{
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}

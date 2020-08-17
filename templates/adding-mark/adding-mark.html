@@ -1,0 +1,55 @@
+{% extends "comment/comment.html" %}
+{% load static %}
+{% block adding-mark %}
+<div class="overlay" id="modal3">
+    <div class="modal1" id="modal4">
+
+    <img src="{% static "pictures/X-mark.svg" %}" style="float:right" id="Layer_2">
+
+    <div class="content">
+        <form method="post" class="p-3 p-md-5 bg-light" enctype="multipart/form-data">
+            {% csrf_token %}
+            <fieldset>
+
+          <div class="form-group">
+            <label for="id_name">Название объекта</label>
+            <input type="text" class="form-control" name = "name" id="id_name">
+          </div>
+
+          <div class="form-group">
+            <label for="id_comment">Комментарий</label>
+            <textarea name = "comment" id="id_comment" cols="30" rows="10" class="form-control"></textarea>
+          </div>
+
+          <div class = "form-group">
+            <label for="id_image">Картинка</label>
+            <input type="file" name="image" accept="image/*" required="" id="id_image">
+          </div>
+
+          <div class = "form-group">
+            <label for="id_position_y">Координаты по y</label>
+            <input type="number" name = "position_y" id="id_position_y">
+          </div>
+
+          <div class = "form-group">
+            <label for="id_position_x">Координаты по x</label>
+            <input type="number" name = "position_x" id="id_position_x" >
+          </div>
+
+          <div class = "id_mark">
+            <label for="id_type">Тип</label>
+            <input type="number" name = "type" id="id_type" value="0">
+          </div>
+
+          <div class="form-group">
+            <input id="submit" type="submit" value="Добавить объект" class="btn py-3 px-4 btn-primary">
+          </div>
+
+            </fieldset>
+        </form>
+
+
+    </div>
+    </div>
+</div>
+{% endblock adding-mark %}

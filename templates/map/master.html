@@ -13,38 +13,10 @@
     </head>
     <body class="offcanvas-info">
 
-        <div id="colorlib-page">
-            <div class="pointer info-section-open" id = "section-info">
-                <img src="{% static "pictures/pointer.svg" %}" class="image-pointer">
-            </div>
-            <aside id="colorlib-section-info" role="complementary" class="js-fullheight">
-                <div class = "border-style-right"></div>
-                <div class = "border-style-left"></div>
-                <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle" id = "section-menu"><i></i></a>
-                <aside id="colorlib-aside" role="complementary" class="js-fullheight">
-
-
-
-                    {% include "shared/navigation.html" %}
-
-                    <div class="colorlib-footer">
-                        {% include "shared/footer.html" %}
-                    </div>
-
-                </aside> <!-- END COLORLIB-ASIDE -->
-                <div id="image" class="image"> </div>
-                <div class="boxes">
-                    <h1 id = "name"></h1>
-                    <p id = "comment"></p>
-                </div>
-            </aside>
-
-        </div><!-- END COLORLIB-PAGE -->
-
         <div class="map" id="map"></div>
 
         {% block content %}
-        {% endblock %}
+        {% endblock content %}
 
         {% include "shared/js.html" %}
     </body>
